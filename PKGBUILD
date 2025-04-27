@@ -1,19 +1,21 @@
 # Maintainer: pappy <pa314159@users.noreply.github.com>
 
 pkgname=octoprint
-pkgver=1.10.3
+pkgver=1.11.0
 pkgrel=2
 pkgdesc="The snappy web interface for your 3D printer on Arch Linux"
 arch=(any)
 url="https://octoprint.org/"
 license=('AGPL3')
 depends=(
-		python-argon2_cffi # aur
+		python-argon2-cffi
+		python-babel
+		python-cachelib
 		python-click
 		python-colorlog
 		python-emoji
 		python-feedparser
-		python-filetype # aur
+		python-filetype
 		python-flask-assets # aur
 		python-flask-login
 		python-flask-limiter # aur
@@ -44,7 +46,6 @@ conflicts=('octoprint-venv')
 install=octoprint.install
 backup=(etc/conf.d/octoprint)
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/OctoPrint/OctoPrint/archive/refs/tags/${pkgver}.tar.gz"
-		010-python-version.patch
 		octoprint.sysusers
 		octoprint.tmpfiles
 		octoprint.service
@@ -52,8 +53,7 @@ source=("${pkgname}-${pkgver}.tar.gz::https://github.com/OctoPrint/OctoPrint/arc
 		octoprint.conf
 		)
 options=(!distcc !ccache)
-sha256sums=('51d903e0fa03a1d24bb986edb543624cc937de91f44b258fed1e1a7bbcf2d4df'
-            '2403f4d263a6804b5d1cfbcc4684a0800d3a8ae13ab2664bb045d62a5ae9396b'
+sha256sums=('7997d26bb51eb83408ad30f819838139073c9414ae4b23cff532b15be6fe591d'
             'bd9b7f989aefb02da1ac414f306861f21f084d886f0283eea11516482b407d65'
             'b07af51817cd209cdf019d6347ce5d62121ccbf20835dad8bb8316a80bc82346'
             '231685e84b0241a466766c766f8d3ba31efda3238f19e9adedea380e7b861737'
