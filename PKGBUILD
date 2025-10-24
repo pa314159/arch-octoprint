@@ -2,14 +2,14 @@
 
 pkgname=octoprint
 pkgver=1.11.3
-pkgrel=1
+pkgrel=2
 pkgdesc="The snappy web interface for your 3D printer on Arch Linux"
 arch=(any)
 url="https://octoprint.org/"
 license=('AGPL3')
 depends=(
 		python-argon2-cffi
-		python-babel
+		# python-babel
 		python-cachelib
 		python-click
 		python-colorlog
@@ -17,24 +17,30 @@ depends=(
 		python-feedparser
 		python-filetype
 		python-flask-assets # aur
-		python-flask-login
+		python-flask-babel
 		python-flask-limiter # aur
+		python-flask-login
 		python-frozendict
 		python-netaddr
 		python-netifaces
-		python-passlib
+		# python-passlib
 		python-pathvalidate # aur
 		python-pkginfo
-		python-psutil
+		# python-psutil
+		python-pydantic
 		python-pylru # aur
 		python-pyserial
-		python-regex
+		python-pytz
+		python-pyyaml
 		python-requests
 		python-sarge # aur
 		python-tornado
-		python-unidecode
-		python-websocket-client
-		python-zipstream-ng #aur
+		# python-watchdog
+		# python-websocket-client
+		# python-wekzeug
+		python-wrapt
+		# python-zeroconf
+		python-zipstream-ng
 )
 makedepends=('python-virtualenv' 'rust')
 optdepends=('ffmpeg: timelapse support'
